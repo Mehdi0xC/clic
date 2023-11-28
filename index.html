@@ -1,0 +1,667 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;500;600;700&display=swap">
+
+<script src="https://unpkg.com/markdown-it/dist/markdown-it.min.js"></script>
+<script src="https://unpkg.com/markdown-it-mathjax/dist/markdown-it-mathjax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+
+  body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-size: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+  }
+
+  #image-slider {
+    text-align: center;
+  }
+
+  #image-slider img {
+    width: 800px;
+  }
+
+  #image-slider button {
+    background-color: #20a0f0;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 50%;  /* make the button circular */
+  }
+
+  #image-slider button:hover {
+    background-color: white;
+    color: #20a0f0;
+  }
+
+  .circle {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 1px;
+  }
+
+  .selected {
+    background-color: #20a0f0;
+  }
+
+  /* .paper-link {
+      color: #0078C0;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 24px;
+  } */
+
+  .rectangle {
+    display: inline-block;
+    border: 2px solid #20a0f0;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    z-index: 1; /* Add this line */
+  }
+
+  .rectangle a {
+    color: #20a0f0;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative; /* Add this line */
+    z-index: 2; /* Add this line */
+  }
+
+  .rectangle:hover {
+    border: 2px solid white;
+    background: #20a0f0;
+  }
+
+  .rectangle:hover a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .rectangle::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 10px;
+  }
+
+  .rectangle .github-link {
+    color: #20a0f0;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+
+  .title-font {
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 500;
+  }
+
+  .author-font {
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .tldr-summary {
+    font-size: 18px; /* Adjust the size as needed */
+    margin-top: 10%;
+  /* Creates space between the image and the text */
+    /* Any other styling you want to add */
+  }
+
+  .video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* Aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  pre {
+    background-color: #f8f8f8; /* Light gray background */
+    padding: 15px; /* Padding around the text */
+    border: 1px solid #ddd; /* Light gray border */
+    overflow: auto; /* Ensures the content is scrollable if it overflows */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for better readability */
+    font-size: 14px; /* Slightly smaller font size */
+    line-height: 1.4; /* Line height for better readability */
+    white-space: pre-wrap; /* Allows text to wrap within the container */
+    word-break: break-all; /* Ensures long lines of text break as needed */
+    margin-bottom: 20px; /* Space below the section */
+  }
+
+
+
+
+  /* h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+  }*/
+
+  h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-top: 10%;
+  }
+
+
+
+
+
+
+
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.rounded {
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  a:link,a:visited
+  {
+    color: #20a0f0;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #20a0f0;
+  }
+
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+  .paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .vert-cent {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  hr
+  {
+    border-color: lightgray;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  }
+
+
+  .project-header a{
+    color: #20a0f0;
+  }
+  .project-header a:hover{
+    color: #C3D9F0;
+  }
+
+
+
+
+</style>
+
+<html>
+<head>
+  <title>CLiC: Concept Learning in Context</title>
+  <meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+  <meta property="og:title" content="Creative and Descriptive Paper Title." />
+  <meta property="og:description" content="Paper description." />
+
+  <!-- Get from Google Analytics -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src=""></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-75863369-6');
+  </script>
+</head>
+
+<body>
+
+
+
+<br>
+
+<center>
+  <span ><h1><span  class="title-font">CLiC: Concept Learning in Context</h1></span></span>
+
+  <table align=center width=900px class="project-header">
+    <tr>
+      <td align=center width=180px>
+        <center>
+          <span  class="author-font"><a href="https://mehdi0xc.github.io/">Mehdi  Safaee <sup>1</sup></a></span>
+        </center>
+      </td>
+      <td align=center width=160px>
+        <center>
+          <span class="author-font"><a href="https://aryanmikaeili.github.io/">Aryan Mikaeili <sup>1</sup></a></span>
+        </center>
+      </td>
+      <td align=center width=160px>
+        <center>
+          <span  class="author-font"><a href="https://orpatashnik.github.io/">Or Patashnik <sup>2</sup> </a></span>
+        </center>
+      </td>
+      <td align=center width=160px>
+        <center>
+          <span  class="author-font"><a href="https://danielcohenor.com/">Daniel Cohen-Or <sup>2</sup> </a></span>
+        </center>
+      </td>
+      <td align=center width=180px>
+        <center>
+          <span class="author-font"><a href="https://www.sfu.ca/~amahdavi/Home.html">Ali Mahdavi-Amiri <sup>1</sup> </a></span>
+        </center>
+      </td>
+    </tr>
+  </table>
+
+  <table align=center width=500px class="project-header" style="margin-top: 2%">
+    <tr>
+      <td align=center width=200px>
+        <center>
+          <span class="author-font"><sup>1</sup> Simon Fraser University</span>
+        </center>
+      </td>
+      <td align=center width=200px>
+        <center>
+          <span  class="author-font",><sup>2</sup> Tel Aviv University</span>
+        </center>
+      </td>
+
+    </tr>
+  </table>
+
+
+
+  <table align=center width=200px style="margin-top: 5%">
+    <tr>
+      <td align=center width=640px>
+        <center>
+          <div class="rectangle">
+            <a href='./resources/paper.pdf' class="github-link">Paper</a>
+          </div>
+        </center>
+      </td>
+      <td align=center width=640px>
+        <center>
+          <div class="rectangle">
+            <a href='.' class="github-link">Code</a>
+          </div>
+        </center>
+      </td>
+    </tr>
+  </table>
+
+</center>
+
+<br><br>
+<center>
+  <table align=center width=1000px>
+    <tr>
+      <td width=260px>
+        <center>
+          <img class="round" style="width:1000px" src="./resources/teaser.png"/>
+          <p class="tldr-summary"><strong>TL;DR</strong>: We Focus on learning a specific pattern from an image (like the ornaments on the red chair) through a unique text token. This token can then be used to effectively transfer the learned pattern onto various other objects (Right) or to create new objects featuring that pattern (Left).</p>
+        </center>
+      </td>
+    </tr>
+  </table>
+</center>
+
+<!-- <hr> -->
+
+<table align=center width=850px>
+  <center><h2>Abstract</h2></center>
+  <tr>
+    <td>
+      This paper addresses the challenge of learning a local visual pattern of an object from one image, and generating images depicting objects with that pattern. Learning a localized concept
+      and placing it on an object in a target image is a nontrivial task, as the objects may have different orientations and shapes. Our approach builds upon recent advancements in visual concept learning.
+      It involves acquiring a visual concept (e.g., an ornament) from a source image and subsequently applying it to an object (e.g., a chair) in a target image. Our key idea is to perform in-context concept learning,
+      acquiring the local visual concept within the broader context of the objects they belong to. To localize the concept learning, we employ soft masks that contain both the concept within the mask and the surrounding image area.
+      We demonstrate our approach through object generation within an image, showcasing plausible embedding of in-context learned concepts. We also introduce methods for directing acquired concepts to specific locations within target images,
+      employing cross-attention mechanisms, and establishing correspondences between source and target objects. The effectiveness of our method is demonstrated through quantitative and qualitative experiments, along with comparisons against baseline techniques.
+    </td>
+  </tr>
+</table>
+<br>
+
+<!-- <hr> -->
+<center><h2>Transfer Results</h2></center>
+<!-- <center><img src="./resources/r1.gif" alt="Results" width="800px"></center> -->
+<div id="image-slider">
+  <button id="previous-button" onclick="changeImageTransfer(-1)">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+  <img id="slider-image-transfer" src="./resources/transfer_results2/1.png" alt="Results">
+  <button id="next-button" onclick="changeImageTransfer(1)">
+    <i class="fas fa-arrow-right"></i>
+  </button>
+  <div id="circle-container_transfer"></div>
+</div>
+
+<center><h2>Generation Results</h2></center>
+<!-- <center><img src="./resources/r1.gif" alt="Results" width="800px"></center> -->
+<div id="image-slider">
+  <button id="previous-button" onclick="changeImageGeneration(-1)">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+  <img id="slider-image-generation" src="./resources/generation_results/1.png" alt="Results">
+  <button id="next-button" onclick="changeImageGeneration(1)">
+    <i class="fas fa-arrow-right"></i>
+  </button>
+  <div id="circle-container_generation"></div>
+</div>
+
+
+
+
+<!-- <hr> -->
+<center><h2>Method</h2></center>
+
+
+<table align=center width=400px>
+  <tr>
+    <td align=center width=400px>
+      <center>
+    <img class="round" style="width:1000px" src="./resources/pipeline.png"/></td>
+    </center>
+    </td>
+  </tr>
+</table>
+<ul style="margin-top: 7%; font-size: 20px">
+  <li><strong>In-Context Concept Learning</strong>: Uses an image (<code>I<sub>s</sub></code>) and a binary mask (<code>M<sub>s</sub></code>) to learn a concept (e.g., an ornament) in the context of a base object (like a chair).
+    <ul>
+          <li><strong><code>&ell;<sub>con</sub></code></strong>: Soft-masked diffusion loss for learning the pattern in context.</li>
+          <li><strong><code>&ell;<sub>att</sub></code></strong>: Restricts attention maps of the learned token (<code>v<sup>*</sup></code>) to the pattern region defined by <code>M<sub>s</sub></code>.</li>
+          <li><strong><code>&ell;<sub>ROI</sub></code></strong>: Uses a text prompt for <code>v<sup>*</sup></code> to enhance concept reconstruction, focusing on a local region by masking <code>I<sub>s</sub></code>.</li>
+        </ul>
+
+  </li>
+  <li><strong>Concept Transfer</strong>: Involves an image (<code>I<sub>tg</sub></code>), a mask (<code>M<sub>tg</sub></code>) defining the edit area, and a user-defined text prompt containing the optimized (<code>v<sup>*</sup></code>).
+
+        <ul>
+          <li><strong>Noise Addition &amp; Denoising</strong>: Adds noise to the latent of <code>I<sub>tg</sub></code> and denoises it with the fine-tuned diffusion model.</li>
+          <li><strong>Blending &amp; Preservation</strong>: Blends the model's output with the masked input to preserve out-of-mask regions.</li>
+          <li><strong>Cross-Attention Guidance:</strong>: Enhances the pattern's presence in the final output.</li>
+        </ul>
+      </li>
+
+</ul>
+
+<!-- <table align=center width=800px>
+    <br>
+    <tr><center>
+        <span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
+        </center>
+    </span>
+</table> -->
+<br>
+<center><h2>Additional Results</h2></center>
+<center>
+  <table align=center width=1000px>
+    <tr>
+      <td width=260px>
+        <center>
+          <img class="round" style="width:1000px" src="./resources/results-sup.png"/>
+        </center>
+      </td>
+    </tr>
+  </table>
+</center>
+<!-- <hr> -->
+<br>
+<center><h2>Presentation</h2></center>
+<center>
+  <div class="video-responsive">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/8g--nx3RyEQ?si=uBYhqH3cuBd7o07_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</center>
+
+
+
+<!-- <hr> -->
+
+<table align=center width=450px>
+  <center><h2>Citation</h2></center>
+
+  <pre><code>@article{safaee2023clic,
+    title={CLiC: Concept Learning in Context},
+    author={Mehdi Safaee and Aryan Mikaeili and Or Patashnik and Daniel Cohen-Or and Ali Mahdavi-Amiri},
+    journal={ArXiv},
+    year={2023}
+}</code></pre>
+
+</table>
+<br>
+
+
+<!-- <table align=center width=900px>
+    <tr>
+        <td width=400px>
+            <left>
+                <center><h2>Acknowledgements</h2></center>
+                This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+            </left>
+        </td>
+    </tr>
+</table> -->
+
+<br>
+
+
+
+
+<!-- <script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  var md = window.markdownit({
+    html: true,
+    linkify: true,
+    typographer: true
+  }).use(window.markdownitMathjax());
+
+  var markdownContent = `
+An overview of SKED. We render the base NeRF model 𝑥base from at least two views and sketch over them (Ci). The input to the editing algorithm is these sketches preprocessed to masks (Mi) and a text prompt. In each iteration similar to DreamFusion [1], we render a random view and apply the Score Distillation Loss to semantically align with the text prompt. Additionally, we compute 𝒍pres to preserve the base NeRF by constraining 𝑥edited's density and color output to be similar to 𝑥base away from the sketch regions. Finally, we use the object mask renderings of the sketch views to define 𝒍sil. This loss ensures that the object mask occupies the sketch regions.
+  `;
+
+  var result = md.render(markdownContent);
+  document.getElementById("markdown-container").innerHTML = result;
+});
+
+</script> -->
+
+<script>
+  var currentImageIndexTransfer = 1;
+  var numOfImagesTransfer = 8;
+
+  var currentImageIndexGeneration = 1;
+  var numOfImagesGeneration = 8;
+
+  window.onload = function() {
+    var container_transfer = document.getElementById('circle-container_transfer');
+    var container_generation = document.getElementById('circle-container_generation')
+    for (var i = 1; i <= numOfImagesTransfer; i++) {
+      var circle = document.createElement('div');
+      circle.className = 'circle';
+      circle.id = 'circle-transfer-' + i;
+      container_transfer.appendChild(circle);
+    }
+    for (var i = 1; i <= numOfImagesGeneration; i++) {
+      var circle = document.createElement('div');
+      circle.className = 'circle';
+      circle.id = 'circle-generation-' + i;
+      container_generation.appendChild(circle);
+    }
+    updateCirclesTransfer();
+    updateCirclesGeneration()
+  }
+
+
+
+  function updateCirclesTransfer() {
+    for (var i = 1; i <= numOfImagesTransfer; i++) {
+      var circle = document.getElementById('circle-transfer-' + i);
+      circle.className = 'circle';
+      if (i == currentImageIndexTransfer) {
+        circle.classList.add('selected');
+      }
+    }
+  }
+  function updateCirclesGeneration() {
+    for (var i = 1; i <= numOfImagesGeneration; i++) {
+      var circle = document.getElementById('circle-generation-' + i);
+      circle.className = 'circle';
+      if (i == currentImageIndexGeneration) {
+        circle.classList.add('selected');
+      }
+    }
+  }
+
+  function changeImageTransfer(direction) {
+    currentImageIndexTransfer += direction;
+    if (currentImageIndexTransfer < 1) {
+      currentImageIndexTransfer = numOfImagesTransfer;
+    } else if (currentImageIndexTransfer > numOfImagesTransfer) {
+      currentImageIndexTransfer = 1;
+    }
+    var newSrc = "./resources/transfer_results2/" + currentImageIndexTransfer + ".png";
+    newSrc += '?' + new Date().getTime(); // Append current timestamp
+    document.getElementById('slider-image-transfer').src = newSrc;
+    updateCirclesTransfer();
+  }
+
+  function changeImageGeneration(direction) {
+    currentImageIndexGeneration += direction;
+    if (currentImageIndexGeneration < 1) {
+      currentImageIndexGeneration = numOfImagesGeneration;
+    } else if (currentImageIndexGeneration > numOfImagesGeneration) {
+      currentImageIndexGeneration = 1;
+    }
+    var newSrc = "./resources/generation_results/" + currentImageIndexGeneration + ".png";
+    newSrc += '?' + new Date().getTime(); // Append current timestamp
+    document.getElementById('slider-image-generation').src = newSrc;
+    updateCirclesGeneration();
+  }
+
+  function copyToClipboard() {
+    var bibtexText = document.getElementById("bibtex").innerText;
+    navigator.clipboard.writeText(bibtexText)
+            .then(() => {
+              alert("BibTeX citation copied to clipboard!");
+            })
+            .catch(err => {
+              console.error('Error in copying text: ', err);
+            });
+  }
+</script>
+
+
+
+</body>
+
+
+
+</html>
+

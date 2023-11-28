@@ -1,0 +1,6 @@
+@article{safaee2023clic,
+    title={CLiC: Concept Learning in Context},
+    author={Mehdi Safaee and Aryan Mikaeili and Or Patashnik and Daniel Cohen-Or and Ali Mahdavi-Amiri},
+    journal={ArXiv},
+    year={2023}
+}
