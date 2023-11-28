@@ -12,7 +12,7 @@
       employing cross-attention mechanisms, and establishing correspondences between source and target objects. The effectiveness of our method is demonstrated through quantitative and qualitative experiments, along with comparisons against baseline techniques.
 
 <p align="center">
-<img src="resources/teaser.png" width="800px"/>
+<img src="https://github.com/Mehdi0xC/clic/blob/page/resources/teaser.png" width="800px"/>
 </p>
 
 # Description
