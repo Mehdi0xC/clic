@@ -38,7 +38,7 @@
   }
 
   #image-slider button {
-    background-color: #20a0f0;
+    background-color: #0078c0;
     border: none;
     color: white;
     padding: 15px;
@@ -54,7 +54,7 @@
 
   #image-slider button:hover {
     background-color: white;
-    color: #20a0f0;
+    color: #0078c0;
   }
 
   .circle {
@@ -67,7 +67,7 @@
   }
 
   .selected {
-    background-color: #20a0f0;
+    background-color: #0078c0;
   }
 
   /* .paper-link {
@@ -79,7 +79,7 @@
 
   .rectangle {
     display: inline-block;
-    border: 2px solid #20a0f0;
+    border: 2px solid #0078c0;
     border-radius: 10px;
     padding: 10px;
     position: relative;
@@ -87,7 +87,7 @@
   }
 
   .rectangle a {
-    color: #20a0f0;
+    color: #0078c0;
     text-decoration: none;
     font-size: 20px;
     position: relative; /* Add this line */
@@ -96,7 +96,7 @@
 
   .rectangle:hover {
     border: 2px solid white;
-    background: #20a0f0;
+    background: #0078c0;
   }
 
   .rectangle:hover a {
@@ -115,7 +115,7 @@
   }
 
   .rectangle .github-link {
-    color: #20a0f0;
+    color: #0078c0;
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
@@ -136,7 +136,7 @@
   .tldr-summary {
     font-size: 18px; /* Adjust the size as needed */
     margin-top: 10%;
-  /* Creates space between the image and the text */
+    /* Creates space between the image and the text */
     /* Any other styling you want to add */
   }
 
@@ -221,11 +221,11 @@
 
   a:link,a:visited
   {
-    color: #20a0f0;
+    color: #0078c0;
     text-decoration: none;
   }
   a:hover {
-    color: #20a0f0;
+    color: #0078c0;
   }
 
   td.dl-link {
@@ -289,12 +289,15 @@
 
 
   .project-header a{
-    color: #20a0f0;
+    color: #0078c0;
   }
   .project-header a:hover{
     color: #C3D9F0;
   }
-
+  .cvpr-title {
+    text-align: center;
+    color: #0078c0;
+  }
 
 
 
@@ -374,28 +377,25 @@
     </tr>
   </table>
 
+  <h4 class="cvpr-title">CVPR 2024</h4>
 
 
-  <table align=center width=700px style="margin-top: 5%">
+
+
+
+  <table align=center width=200px style="margin-top: 5%">
     <tr>
-      <td align=center width=40px>
+      <td align=center width=640px>
         <center>
           <div class="rectangle">
-            <a href='./resources/paper.pdf' class="github-link">Paper (PDF)</a>
+            <a href='./resources/paper.pdf' class="github-link">Paper</a>
           </div>
         </center>
       </td>
-      <td align=center width=40px>
+      <td align=center width=640px>
         <center>
           <div class="rectangle">
-            <a href='http://arxiv.org/abs/2311.17083' class="github-link">Paper (ArXiv)</a>
-          </div>
-        </center>
-      </td>
-      <td align=center width=40px>
-        <center>
-          <div class="rectangle">
-            <a href='https://github.com/Mehdi0xC/clic' class="github-link">Code</a>
+            <a href='.' class="github-link">Code</a>
           </div>
         </center>
       </td>
@@ -423,7 +423,7 @@
 <table align=center width=850px>
   <center><h2>Abstract</h2></center>
   <tr>
-    <td style="font-size: 18px;">
+    <td>
       This paper addresses the challenge of learning a local visual pattern of an object from one image, and generating images depicting objects with that pattern. Learning a localized concept
       and placing it on an object in a target image is a nontrivial task, as the objects may have different orientations and shapes. Our approach builds upon recent advancements in visual concept learning.
       It involves acquiring a visual concept (e.g., an ornament) from a source image and subsequently applying it to an object (e.g., a chair) in a target image. Our key idea is to perform in-context concept learning,
@@ -473,7 +473,7 @@
   <tr>
     <td align=center width=400px>
       <center>
-    <img class="round" style="width:1000px" src="./resources/pipeline.png"/></td>
+        <img class="round" style="width:1000px" src="./resources/pipeline.png"/></td>
     </center>
     </td>
   </tr>
@@ -481,20 +481,20 @@
 <ul style="margin-top: 7%; font-size: 20px">
   <li><strong>In-Context Concept Learning</strong>: Uses an image (<code>I<sub>s</sub></code>) and a binary mask (<code>M<sub>s</sub></code>) to learn a concept (e.g., an ornament) in the context of a base object (like a chair).
     <ul>
-          <li><strong><code>&ell;<sub>con</sub></code></strong>: Soft-masked diffusion loss for learning the pattern in context.</li>
-          <li><strong><code>&ell;<sub>att</sub></code></strong>: Restricts attention maps of the learned token (<code>v<sup>*</sup></code>) to the pattern region defined by <code>M<sub>s</sub></code>.</li>
-          <li><strong><code>&ell;<sub>ROI</sub></code></strong>: Uses a text prompt for <code>v<sup>*</sup></code> to enhance concept reconstruction, focusing on a local region by masking <code>I<sub>s</sub></code>.</li>
-        </ul>
+      <li><strong><code>&ell;<sub>con</sub></code></strong>: Soft-masked diffusion loss for learning the pattern in context.</li>
+      <li><strong><code>&ell;<sub>att</sub></code></strong>: Restricts attention maps of the learned token (<code>v<sup>*</sup></code>) to the pattern region defined by <code>M<sub>s</sub></code>.</li>
+      <li><strong><code>&ell;<sub>ROI</sub></code></strong>: Uses a text prompt for <code>v<sup>*</sup></code> to enhance concept reconstruction, focusing on a local region by masking <code>I<sub>s</sub></code>.</li>
+    </ul>
 
   </li>
   <li><strong>Concept Transfer</strong>: Involves an image (<code>I<sub>tg</sub></code>), a mask (<code>M<sub>tg</sub></code>) defining the edit area, and a user-defined text prompt containing the optimized (<code>v<sup>*</sup></code>).
 
-        <ul>
-          <li><strong>Noise Addition &amp; Denoising</strong>: Adds noise to the latent of <code>I<sub>tg</sub></code> and denoises it with the fine-tuned diffusion model.</li>
-          <li><strong>Blending &amp; Preservation</strong>: Blends the model's output with the masked input to preserve out-of-mask regions.</li>
-          <li><strong>Cross-Attention Guidance:</strong>: Enhances the pattern's presence in the final output.</li>
-        </ul>
-      </li>
+    <ul>
+      <li><strong>Noise Addition &amp; Denoising</strong>: Adds noise to the latent of <code>I<sub>tg</sub></code> and denoises it with the fine-tuned diffusion model.</li>
+      <li><strong>Blending &amp; Preservation</strong>: Blends the model's output with the masked input to preserve out-of-mask regions.</li>
+      <li><strong>Cross-Attention Guidance:</strong>: Enhances the pattern's presence in the final output.</li>
+    </ul>
+  </li>
 
 </ul>
 
@@ -537,8 +537,8 @@
   <pre><code>@article{safaee2023clic,
     title={CLiC: Concept Learning in Context},
     author={Mehdi Safaee and Aryan Mikaeili and Or Patashnik and Daniel Cohen-Or and Ali Mahdavi-Amiri},
-    journal={ArXiv},
-    year={2023}
+    journal={CVPR},
+    year={2024}
 }</code></pre>
 
 </table>
