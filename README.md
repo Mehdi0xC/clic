@@ -19,7 +19,8 @@
 
 Official implementation of the paper:  CLiC: Concept Learning in Context
 
-# Code coming soon!
+# How to run the code
+`learning.py` should be used to learn a concept from a source image and saving the parameters. `transfer.py` should be used to transfer a learned concept to a target image. Both source and target images should have masks specifying the desired regions.
 
 # Citation
 To cite the paper please use the following bibtex:
