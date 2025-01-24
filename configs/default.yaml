@@ -1,0 +1,51 @@
+# Default Config
+device: "cuda"
+
+target_layers: cross_up 
+
+seed: 999
+
+weights: "default"
+
+source_data: None
+
+mode: "gen"
+
+modifier: "<x>"
+
+n_timesteps: 50
+
+prompt: "a chair"
+
+token_id: 4
+
+use_default_weights: False
+
+fill_seg_mask: False
+dilate_seg_mask: False
+dilation_factor: 5
+soft_edges: False
+erode_seg_mask: False
+clear: False
+
+tag: 0
+
+t_start: 10
+
+min_blending_step: 35
+max_blending_step: 45
+
+theta: 1
+feature_layer: 0
+
+attention_lambda: None
+context_lambda: None
+local_lambda: None
+
+validation_steps: 25
+class_prompt: None
+
+train_q_out: True
+
+att_opt: 0
+
